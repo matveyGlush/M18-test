@@ -9,13 +9,12 @@
 </head>
 <body class="test">
     <header>
-        <a href="#" aria-label="логотип ссылка">
-            <picture>
-                <source srcset="mdn-logo-wide.png" media="(min-width: 1024px)" />
-                <img src="mdn-logo-narrow.png" alt="Новый Лесснер" />
-            </picture>
+        <a class="logo" href="#" aria-label="логотип ссылка">
+            <img src="./img/logo.svg" alt="Новый Лесснер" />
         </a>
-        <button>menu</button>
+        <button class="burger">
+            <span></span>
+        </button>
         <nav aria-label="главное меню">
             <ul>
                 <li>
@@ -33,7 +32,7 @@
             </ul>
         </nav>
         <div>
-            <a href="#">
+            <a class="phone-link" href="#">
                 <svg width="34" height="30" viewBox="0 0 34 30" fill="none" xmlns="http://www.w3.org/2000/svg">
                     <path fill-rule="evenodd" clip-rule="evenodd" d="M9.61762 0.777832C6.91763 0.777832 4.72885 
                         2.96661 4.72885 5.6666V8.38895V9.55561C4.72885 10.1079 5.17657 10.5556 5.72885 10.5556C6.28114 
@@ -47,12 +46,15 @@
                         15.4997 21.4854 15.1092 21.0949C14.7187 20.7043 14.7187 20.0711 15.1092 19.6806L18.7898 16.0002H1.82861C1.27633 
                         16.0002 0.828613 15.5524 0.828613 15.0002C0.828613 14.4479 1.27633 14.0002 1.82861 14.0002H18.6345L15.109 
                         10.4746C14.7185 10.0841 14.7185 9.4509 15.109 9.06036Z" fill="#40454F"/>
-                </svg>                    
-                <span>заказать звонок</span>
+                </svg>
+                <div>
+                    812 561-03-75
+                    <span>заказать звонок</span>
+                </div>
             </a>
-            <a href="#">
-                выбрать квартиру
-                <svg width="12" height="12" viewBox="0 0 12 12" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <a class="apartment-link" href="#">
+                <span>ВЫБРАТЬ КВАРТИРУ</span>
+                <svg class="arrow" width="12" height="12" viewBox="0 0 12 12" fill="none" xmlns="http://www.w3.org/2000/svg">
                     <path fill-rule="evenodd" clip-rule="evenodd" d="M2.83919 0.803295C2.45259 0.803295 2.13919 1.1167 
                     2.13919 1.50329C2.13919 1.88989 2.45259 2.20329 2.83919 2.20329L8.78306 2.20329L1.07726 9.90909C0.803896 
                     10.1825 0.803896 10.6257 1.07726 10.899C1.35063 11.1724 1.79385 11.1724 2.06721 10.899L9.7754 3.19085L9.7754 
@@ -63,29 +65,29 @@
         </div>
     </header>
     <main>
-        <section class="title">
+        <section class="title-section">
             <nav aria-label="путь до текущей страницы">
                 <ul>
                     <li>
-                        <a href="#">главная</a>
+                        <a href="#">главная /</a>
                     </li>
                     <li>
-                        <a href="#">о проекте</a>
+                        <a href="#">&thinsp;о проекте</a>
                     </li>
                 </ul>
             </nav>
             <h1>о проекте</h1>
         </section>
-        <section class="about">
-            <div>
-                <h2>строим проекты, которым нет равных</h2>
+        <section class="about-section">
+            <div class="content">
+                <h2>строим проекты, которым <span>нет равных</span></h2>
                 <p>Компания «Отделстрой» работает в сфере строительства в Санкт-Петербурге и области с 1994 года.</p>
                 <p>
                     Мы счастливы предлагать людям и обществу комфортные условия для жизни. В нашем портфеле — более миллиона 
                     квадратных метров жилья и объектов социальной инфраструктуры. Нашими клиентам стали более 15 тысяч семей, 
                     которые получили квартиры в срок, либо досрочно.
                 </p>
-                <a href="#">ВЫБРАТЬ КВАРТИРУ</a>
+                <a class="choose-apartment" href="#">ВЫБРАТЬ КВАРТИРУ</a>
                 <a href="#">
                     НАЙТИ БЛИЖАЙШИЙ ОФИС
                     <svg width="12" height="12" viewBox="0 0 12 12" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -97,31 +99,28 @@
                     </svg>
                 </a>
             </div>
-            <picture>
-                <source srcset="mdn-logo-wide.png" media="(min-width: 1024px)" />
-                <img src="mdn-logo-narrow.png" alt="Новый Лесснер" />
-            </picture>
+            <div class="image"></div>
         </section>
-        <section class="factoids">
+        <section class="factoids-section">
             <h2>история в цифрах</h2>
             <ul>
-                <li>
+                <li class="factoid-desktop">
                     150
-                    <span>
-                        квартир на этаже
+                    <span class="h4-desktop">
+                        квартир<br> на этаже
                     </span>
                 </li>
-                <li>
+                <li class="factoid-desktop">
                     300+
-                    <span>
-                        реализованных проектов
+                    <span class="h4-desktop">
+                        реализованных<br> проектов
                     </span>
-                </li>
+                </br>
             </ul>
         </section>
     </main>
     <footer>
-        <div>
+        <div class="cr">
             <p>
                 Вся информация на сайте носит справочный характер и не является публичной офертой, 
                 согласно статье 437 ГК РФ. Использование материалов с сайта newlessner. ru не допускается 
@@ -132,7 +131,7 @@
             </p>
             <a href="#">Создание сайта — М18</a>
         </div>
-        <div>
+        <div class="contacts">
             <span>
                 Санкт-Петербург, Светлановский пр., д. 115, корп. 1
             </span>
