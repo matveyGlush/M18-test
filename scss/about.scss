@@ -102,7 +102,7 @@ header {
                 }
             }
 
-            svg {
+            img {
                 margin-right: 16px;
             }
 
@@ -375,29 +375,6 @@ footer {
 }
 
 
-// Modal
-
-.modal {
-    position: absolute;
-    right: 0;
-    top: 0;
-    width: min(479px, 50%);
-    height: 100vh;
-    padding: 47px 15px 26px 15px;
-    background: var(--white);
-    visibility: hidden;
-    transform: translateX(120%);
-    transition: transform 0.3s ease-in-out;
-}
-
-.modal-active {
-    flex-direction: column;
-    justify-content: space-between;
-    visibility: visible;
-    transform: none;
-    z-index: 1;
-}
-
 // media
 
 @media (max-width: 1300px) {
@@ -506,7 +483,7 @@ footer {
             .phone {
                 margin: 0;
 
-                svg {
+                img {
                     display: none;
                 }
 

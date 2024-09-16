@@ -5,7 +5,10 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>new lessener</title>
     <link rel="stylesheet" href="./styles/glob-min.css">
+    <link rel="stylesheet" href="./styles/modal-min.css">
     <link rel="stylesheet" href="./styles/about-min.css">
+    <script defer type="module" src="./scripts/inputmask.min.js"></script>
+    <script defer type="module" src="./scripts/just-validate.min.js"></script>
     <script defer type="module" src="./scripts/main.js"></script>
 </head>
 <body class="test">
@@ -33,21 +36,8 @@
             </ul>
         </nav>
         <div>
-            <button class="phone modal-btn" data-modalorder="modal-order" data-animation="side" aria-label="заказать звонок">
-                <svg width="34" height="30" viewBox="0 0 34 30" fill="none" xmlns="http://www.w3.org/2000/svg">
-                    <path fill-rule="evenodd" clip-rule="evenodd" d="M9.61762 0.777832C6.91763 0.777832 4.72885 
-                        2.96661 4.72885 5.6666V8.38895V9.55561C4.72885 10.1079 5.17657 10.5556 5.72885 10.5556C6.28114 
-                        10.5556 6.72885 10.1079 6.72885 9.55561V8.38895V5.6666C6.72885 4.07118 8.0222 2.77783 9.61762 
-                        2.77783H28.2825C29.8779 2.77783 31.1712 4.07118 31.1712 5.6666V24.3335C31.1712 25.9289 29.8779 
-                        27.2223 28.2825 27.2223H9.61762C8.0222 27.2223 6.72885 25.9289 6.72885 24.3335V21.6112V20.4445C6.72885 
-                        19.8922 6.28114 19.4445 5.72885 19.4445C5.17657 19.4445 4.72885 19.8922 4.72885 20.4445V21.6112V24.3335C4.72885 
-                        27.0335 6.91763 29.2223 9.61762 29.2223H28.2825C30.9825 29.2223 33.1712 27.0335 33.1712 24.3335V5.6666C33.1712 
-                        2.96661 30.9825 0.777832 28.2825 0.777832H9.61762ZM15.109 9.06036C15.4995 8.66982 16.1326 8.66981 16.5232 
-                        9.06034L21.7879 14.3251C22.2036 14.7408 22.2036 15.4148 21.7879 15.8305L16.5234 21.0949C16.1329 21.4854 
-                        15.4997 21.4854 15.1092 21.0949C14.7187 20.7043 14.7187 20.0711 15.1092 19.6806L18.7898 16.0002H1.82861C1.27633 
-                        16.0002 0.828613 15.5524 0.828613 15.0002C0.828613 14.4479 1.27633 14.0002 1.82861 14.0002H18.6345L15.109 
-                        10.4746C14.7185 10.0841 14.7185 9.4509 15.109 9.06036Z" fill="#40454F"/>
-                </svg>
+            <button class="phone modal-btn" data-modal="modal" data-animation="show" aria-label="заказать звонок">
+                <img src="./img/order.svg" alt="заказать звонок">
                 <div class="header-phone">
                     812 561-03-75
                     <span class="header-order-link">заказать&nbsp;звонок</span>
@@ -172,19 +162,36 @@
         </div>
     </footer>
 
-    <!-- <div class="modal">
-        <div class="modal__container" data-target="modal-order">
-            <button class="close-modal" aria-label="закрыть модальное окно"></button>
+    <div class="modal">
+        <div class="modal__container show" data-target="modal">
+            <button class="modal-close" aria-label="закрыть модальное окно"></button>
             <div class="modal-content">
-                <h2>заказать&nbsp;звонок</h2>
-                <p>Персональный менеджер ответит на&nbsp;все вопросы и&nbsp;подготовит для вас индивидуальное предложение.</p>
-                <form action="">
-                    <input type="text">
-                    <input type="text">
-                    <input type="checkbox">
+                <h2>заказать&nbsp;<span>звонок</span></h2>
+                <form class="modal-form appear" action="">
+                    <p class="lead">Персональный менеджер ответит на&nbsp;все вопросы и&nbsp;подготовит для вас индивидуальное предложение.</p>
+                    <input class="form-name" type="text" placeholder="Имя" data-validate-field="name">
+                    <input type="tel" placeholder="Телефон" data-validate-field="tel">
+                    <label class="check" for="agree">
+                        <input id="agree" type="checkbox" data-validate-field="agree">
+                        Согласие на обработку 
+                        <a href="#">персональных данных</a>
+                    </label>
+                    <button class="submit" type="submit">
+                        ОТПРАВИТЬ
+                        <svg class="arrow" width="12" height="12" viewBox="0 0 12 12" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path fill-rule="evenodd" clip-rule="evenodd" d="M2.83919 0.803356C2.45259 0.803356 2.13919 1.11676 
+                            2.13919 1.50336C2.13919 1.88995 2.45259 2.20336 2.83919 2.20336L8.78306 2.20336L1.07726 9.90915C0.803896 
+                            10.1825 0.803896 10.6257 1.07726 10.8991C1.35063 11.1725 1.79385 11.1725 2.06721 10.8991L9.7754 
+                            3.19091V9.13957C9.7754 9.52617 10.0888 9.83957 10.4754 9.83957C10.862 9.83957 11.1754 9.52617 11.1754 
+                            9.13957V1.58611C11.1754 1.15381 10.825 0.803355 10.3926 0.803355L2.83919 0.803356Z" fill="#ffffff"/>
+                        </svg>
+                    </button>
                 </form>
+                <div class="modal-succes hide">
+                    Спасибо! Наш менеджер свяжется с&nbsp;вами в&nbsp;ближайшее время и&nbsp;ответит на&nbsp;все интересующие вопросы.
+                </div>
             </div>
         </div>
-    </div> -->
+    </div>
 </body>
 </html>
