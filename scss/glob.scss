@@ -68,6 +68,10 @@ ul {
     margin: 0;
 }
 
+button {
+    cursor: pointer;
+}
+
 
 // Text styles
 
@@ -112,13 +116,6 @@ h1, h2 {
     color: var(--dark-90);
 }
 
-.light-p1-mob {
-    font-weight: 350;
-    font-size: 16px;
-    line-height: 16px;
-    color: var(--dark-25);
-}
-
 .button {
     font-size: 16px;
     line-height: 16px;
@@ -136,6 +133,11 @@ h1, h2 {
     color: var(--white);
 }
 
+.regular-p3 {
+    font-size: 14px;
+    line-height: 20px;
+}
+
 .light-p2 {
     font-family: "Circe-Light", sans-serif;
     font-size: 16px;
@@ -150,6 +152,62 @@ h1, h2 {
 }
 
 .h4 {
+    font-family: 'FiveYearsLater', sans-serif;
     font-size: 26px;
     line-height: 36px;
+}
+
+@media (max-width: 600px) {
+    h1 {
+        font-size: 32px;
+    }
+
+    h2 {
+        font-size: 28px;
+    }
+
+    .h4 {
+        font-size: 20px;
+        line-height: 26px;
+    }
+
+    .lead {
+        font-size: 19px;
+        line-height: 25px;
+    }
+
+    .regular-p3 {
+        font-size: 12px;
+        line-height: 16px;
+    }
+
+    .button {
+        font-size: 14px;
+        line-height: 14px;
+    }
+
+    .regular-p1 {
+        font-size: 15px;
+        line-height: 22px;
+    }
+
+    .light-p2 {
+        font-size: 14px;
+        line-height: 17px;
+    }
+
+    .factoid {
+        font-size: 60px;
+        line-height: 80px;
+    }
+
+    .header-phone {
+        font-size: 12px;
+        line-height: 12px;
+    }
+
+    .light-p1 {
+        font-size: 18px;
+        line-height: 22.5px;
+    }
 }
